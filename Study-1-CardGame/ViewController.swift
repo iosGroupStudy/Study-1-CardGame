@@ -40,6 +40,7 @@ class ViewController: UIViewController {
         // framed이란 부모 뷰 기준으로 자기 위치, x,y 좌표와 넓이 높이 주었다.
         cardButton.frame = CGRect(x: 100, y: 100, width: 80, height: 120)
         // addTarget이란, 왼쪽의 객체에 for에 해당하는 동작이 오면 action을 실행시켜라
+        // touchUpInside는 눌렀다 땔때. 커맨드 눌러서 들어가면 온갖 동작이 다 정의도어있다.
         cardButton.addTarget(self, action: #selector(self.flipCard), for: .touchUpInside)
     }
     
@@ -49,8 +50,16 @@ class ViewController: UIViewController {
     @objc func flipCard() {
         // print() 하면 바로 아래에 찍힌다.
         // print 값 찍고 싶을떄
-        let apple = 3
-        print("I want to print apple", apple)
+        // let apple = 3
+        // print("I want to print apple", apple)
+        
+        if cardButton.currentTitle == "🐡" {
+            cardButton.setTitle("🦈", for: .normal)
+            cardButton.backgroundColor = .blue
+        } else {
+            cardButton.setTitle("🐡", for: .normal)
+            cardButton.backgroundColor = .white
+        }
     }
     
 }
