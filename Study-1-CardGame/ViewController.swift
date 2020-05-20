@@ -39,6 +39,18 @@ class ViewController: UIViewController {
         // superView = 부모 뷰 = 자신이 addSubview 된 뷰 = viewController의 뷰
         // framed이란 부모 뷰 기준으로 자기 위치, x,y 좌표와 넓이 높이 주었다.
         cardButton.frame = CGRect(x: 100, y: 100, width: 80, height: 120)
+        // addTarget이란, 왼쪽의 객체에 for에 해당하는 동작이 오면 action을 실행시켜라
+        cardButton.addTarget(self, action: #selector(self.flipCard), for: .touchUpInside)
+    }
+    
+    // #selector이 swift 이전 언어 objc 기능이라 @objc를 붙였다.
+    // 나중에는 다른 방식으로 구현할거니 일단 알고만 넘어가자
+    // #selector을 쓰는곳에서는 @objc를 붙인다.
+    @objc func flipCard() {
+        // print() 하면 바로 아래에 찍힌다.
+        // print 값 찍고 싶을떄
+        let apple = 3
+        print("I want to print apple", apple)
     }
     
 }
