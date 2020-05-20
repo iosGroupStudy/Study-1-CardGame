@@ -10,8 +10,7 @@
 // `UI`로 시작하는 파일을 쓰려면 무조건 import 된다고 보면된다.
 import UIKit
 
-// 앱에서 한 화면의 단위라 생각하자.
-// ViewController는 한 화면의 뷰를 책임진다.
+// 앱에서 한 화면의 뷰를 책임지는 녀석: ViewController
 class ViewController: UIViewController {
     
     let cardButton = UIButton()
