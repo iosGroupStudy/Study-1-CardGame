@@ -25,6 +25,13 @@ class ViewController: UIViewController {
         // addSubview를 해주지 않으면 화면에 안보인다!
         self.view.addSubview(cardButton)
         cardButton.backgroundColor = .red
+        // 단순히 addSubview한다고 화면에 보이는것이 아니라
+        // `위치`까지 정해줘야한다
+        // 여기서는 좌표를 주어서 위치를 정해주었다.
+        // cardButton의 frame이라는 값에다가 x,y, width, height 값을 주었다.
+        // frame을 설명하기 앞서 superView의 개념을 설명하면
+        // superView = 부모 뷰 = 자신이 addSubview 된 뷰 = viewController의 뷰
+        // framed이란 부모 뷰 기준으로 자기 위치, x,y 좌표와 넓이 높이 주었다.
         cardButton.frame = CGRect(x: 100, y: 100, width: 20, height: 20)
     }
     
