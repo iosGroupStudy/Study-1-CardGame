@@ -13,6 +13,8 @@ import UIKit
 // 앱에서 한 화면의 뷰를 책임지는 녀석: ViewController
 class ViewController: UIViewController {
     
+    var flipCount: Int
+    
     // let vs var, let은 한번 생성되고 다시 재할당 안됨
     // ex.
     // let button = UIButton()
