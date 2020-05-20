@@ -21,6 +21,9 @@ class ViewController: UIViewController {
     // button = UIButton() -> 안됨 var로 선언해야됨.
     
     let cardButton = UIButton()
+    
+    // 라벨이란. 단순한 텍스트를 나타낸다
+    let flipCountLabel = UILabel()
 
     // viewController가 만들어지고, viewController의 view가 메모리에 올라갈때 불린다.
     // viewController 생명주기에서 제일 먼저 불리고
@@ -44,6 +47,14 @@ class ViewController: UIViewController {
         // addTarget이란, 왼쪽의 객체에 for에 해당하는 동작이 오면 action을 실행시켜라
         // touchUpInside는 눌렀다 땔때. 커맨드 눌러서 들어가면 온갖 동작이 다 정의도어있다.
         cardButton.addTarget(self, action: #selector(self.flipCard), for: .touchUpInside)
+        
+        
+        view.addSubview(flipCountLabel)
+        flipCountLabel.frame = CGRect(x: 30, y: 200, width: 100, height: 200)
+        // Int 값을 String으로 변환
+        flipCountLabel.text = "\(flipCount)"
+        flipCountLabel.textColor = .orange
+        flipCountLabel.font = UIFont.boldSystemFont(ofSize: 30)
     }
     
     // #selector이 swift 이전 언어 objc 기능이라 @objc를 붙였다.
@@ -64,6 +75,7 @@ class ViewController: UIViewController {
         }
         
         flipCount += 1
+        flipCountLabel.text = "\(flipCount)"
     }
     
 }
