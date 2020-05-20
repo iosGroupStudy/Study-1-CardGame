@@ -14,7 +14,13 @@ import UIKit
 // `view`란, 자신의 직사각형 내부의 컨텐츠를 책임지는 객체
 class ViewController: UIViewController {
     
-    var flipCount: Int = 0
+    var flipCount: Int = 0 {
+        // property Observer
+        // flipCount에 값이 할당될때마다 실행되는 코드
+        didSet {
+            flipCountLabel.text = "Flip 횟수:  \(flipCount)"
+        }
+    }
     
     // let vs var, let은 한번 생성되고 다시 재할당 안됨
     // ex.
@@ -85,9 +91,6 @@ class ViewController: UIViewController {
             cardButton.setTitle("🐡", for: .normal)
             cardButton.backgroundColor = .white
         }
-        
-        flipCount += 1
-        flipCountLabel.text = "\(flipCount)"
     }
     
     @objc func flipSecondCard() {
@@ -97,11 +100,7 @@ class ViewController: UIViewController {
         } else {
             secondCardButton.setTitle("🐡", for: .normal)
             secondCardButton.backgroundColor = .white
-        }
-        
-        flipCount += 1
-        flipCountLabel.text = "\(flipCount)"
-    }
+        }    }
     
 }
 
