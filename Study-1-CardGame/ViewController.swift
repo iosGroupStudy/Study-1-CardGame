@@ -10,7 +10,8 @@
 // `UI`로 시작하는 파일을 쓰려면 무조건 import 된다고 보면된다.
 import UIKit
 
-// 앱에서 한 화면의 뷰를 책임지는 녀석: ViewController
+// 앱에서 한 화면의 `뷰`를 책임지는 녀석: ViewController
+// `view`란, 자신의 직사각형 내부의 컨텐츠를 책임지는 객체
 class ViewController: UIViewController {
     
     var flipCount: Int = 0
@@ -22,6 +23,8 @@ class ViewController: UIViewController {
     
     let cardButton = UIButton()
     
+    let secondCardButton = UIButton()
+    
     // 라벨이란. 단순한 텍스트를 나타낸다
     let flipCountLabel = UILabel()
 
@@ -32,7 +35,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // 이 ViewController의 view위에 얹는다.
         // addSubview를 해주지 않으면 화면에 안보인다!
-        self.view.addSubview(cardButton)
+        view.addSubview(cardButton)
         cardButton.backgroundColor = .white
         cardButton.setTitle("🐡", for: .normal)
         cardButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 50)
@@ -48,6 +51,15 @@ class ViewController: UIViewController {
         // touchUpInside는 눌렀다 땔때. 커맨드 눌러서 들어가면 온갖 동작이 다 정의도어있다.
         cardButton.addTarget(self, action: #selector(self.flipCard), for: .touchUpInside)
         
+        view.addSubview(secondCardButton)
+        secondCardButton.backgroundColor = .white
+        secondCardButton.setTitle("🐡", for: .normal)
+        secondCardButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 50)
+        secondCardButton.frame = CGRect(x: 300, y: 100, width: 80, height: 120)
+        // addTarget이란, 왼쪽의 객체에 for에 해당하는 동작이 오면 action을 실행시켜라
+        // touchUpInside는 눌렀다 땔때. 커맨드 눌러서 들어가면 온갖 동작이 다 정의도어있다.
+        secondCardButton.addTarget(self, action: #selector(self.flipSecondCard), for: .touchUpInside)
+
         
         view.addSubview(flipCountLabel)
         flipCountLabel.frame = CGRect(x: 30, y: 200, width: 100, height: 200)
@@ -72,6 +84,19 @@ class ViewController: UIViewController {
         } else {
             cardButton.setTitle("🐡", for: .normal)
             cardButton.backgroundColor = .white
+        }
+        
+        flipCount += 1
+        flipCountLabel.text = "\(flipCount)"
+    }
+    
+    @objc func flipSecondCard() {
+        if secondCardButton.currentTitle == "🐡" {
+            secondCardButton.setTitle("🦈", for: .normal)
+            secondCardButton.backgroundColor = .blue
+        } else {
+            secondCardButton.setTitle("🐡", for: .normal)
+            secondCardButton.backgroundColor = .white
         }
         
         flipCount += 1
