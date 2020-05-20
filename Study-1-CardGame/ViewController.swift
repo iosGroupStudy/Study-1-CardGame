@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         // frame을 설명하기 앞서 superView의 개념을 설명하면
         // superView = 부모 뷰 = 자신이 addSubview 된 뷰 = viewController의 뷰
         // framed이란 부모 뷰 기준으로 자기 위치, x,y 좌표와 넓이 높이 주었다.
-        cardButton.frame = CGRect(x: 100, y: 100, width: 20, height: 20)
+        cardButton.frame = CGRect(x: 100, y: 100, width: 40, height: 80)
     }
     
 }
