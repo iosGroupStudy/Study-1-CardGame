@@ -24,6 +24,8 @@ class ViewController: UIViewController {
         // 이 ViewController의 view위에 얹는다.
         // addSubview를 해주지 않으면 화면에 안보인다!
         self.view.addSubview(cardButton)
+        cardButton.backgroundColor = .red
+        cardButton.frame = CGRect(x: 100, y: 100, width: 20, height: 20)
     }
     
 }
