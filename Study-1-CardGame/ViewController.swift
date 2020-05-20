@@ -13,7 +13,7 @@ import UIKit
 // 앱에서 한 화면의 뷰를 책임지는 녀석: ViewController
 class ViewController: UIViewController {
     
-    var flipCount: Int
+    var flipCount: Int = 0
     
     // let vs var, let은 한번 생성되고 다시 재할당 안됨
     // ex.
@@ -62,6 +62,8 @@ class ViewController: UIViewController {
             cardButton.setTitle("🐡", for: .normal)
             cardButton.backgroundColor = .white
         }
+        
+        flipCount += 1
     }
     
 }
