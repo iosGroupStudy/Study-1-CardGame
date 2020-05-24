@@ -14,6 +14,9 @@ import UIKit
 // `view`란, 자신의 직사각형 내부의 컨텐츠를 책임지는 객체
 class ViewController: UIViewController {
     
+    // ui 붙여줘야
+    let label = UILabel()
+    
     var flipCount: Int = 0 {
         // property Observer
         // flipCount에 값이 할당될때마다 실행되는 코드
@@ -45,6 +48,7 @@ class ViewController: UIViewController {
     // viewController가 만들어지고, viewController의 view가 메모리에 올라갈때 불린다.
     // viewController 생명주기에서 제일 먼저 불리고
     // viewController가 만들어질때 딱 1번 불린다.
+    // init가 뭐냐
     override func viewDidLoad() {
         super.viewDidLoad()
         // 이 ViewController의 view위에 얹는다.
