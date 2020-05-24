@@ -3,25 +3,33 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		E136928D247A66BE00BBABA0 /* CardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E136928C247A66BE00BBABA0 /* CardButton.swift */; };
+		E136928F247A8F9000BBABA0 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E136928E247A8F9000BBABA0 /* Game.swift */; };
+		E1369291247A8FF500BBABA0 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1369290247A8FF500BBABA0 /* Card.swift */; };
 		E1D9ABCB247549EB0063875B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D9ABCA247549EB0063875B /* AppDelegate.swift */; };
 		E1D9ABCF247549EB0063875B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D9ABCE247549EB0063875B /* ViewController.swift */; };
 		E1D9ABD4247549EC0063875B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1D9ABD3247549EC0063875B /* Assets.xcassets */; };
 		E1D9ABD7247549EC0063875B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1D9ABD5247549EC0063875B /* LaunchScreen.storyboard */; };
+		F32ED3DEB2D8265BC07177E1 /* Pods_Study_1_CardGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F71EBA331BBF072504577B09 /* Pods_Study_1_CardGame.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C3D0FD90C2EEA6AAA930B1B /* Pods-Study-1-CardGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Study-1-CardGame.release.xcconfig"; path = "Target Support Files/Pods-Study-1-CardGame/Pods-Study-1-CardGame.release.xcconfig"; sourceTree = "<group>"; };
+		A88BC475428F2EE43F83D38F /* Pods-Study-1-CardGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Study-1-CardGame.debug.xcconfig"; path = "Target Support Files/Pods-Study-1-CardGame/Pods-Study-1-CardGame.debug.xcconfig"; sourceTree = "<group>"; };
 		E136928C247A66BE00BBABA0 /* CardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButton.swift; sourceTree = "<group>"; };
+		E136928E247A8F9000BBABA0 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		E1369290247A8FF500BBABA0 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		E1D9ABC7247549EB0063875B /* Study-1-CardGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Study-1-CardGame.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1D9ABCA247549EB0063875B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1D9ABCE247549EB0063875B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E1D9ABD3247549EC0063875B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1D9ABD6247549EC0063875B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1D9ABD8247549EC0063875B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F71EBA331BBF072504577B09 /* Pods_Study_1_CardGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Study_1_CardGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F32ED3DEB2D8265BC07177E1 /* Pods_Study_1_CardGame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9EBA977E9E03FF3E330E572D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F71EBA331BBF072504577B09 /* Pods_Study_1_CardGame.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B7BD89FBD2C6FB66C0BC5786 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A88BC475428F2EE43F83D38F /* Pods-Study-1-CardGame.debug.xcconfig */,
+				8C3D0FD90C2EEA6AAA930B1B /* Pods-Study-1-CardGame.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E1D9ABBE247549EB0063875B = {
 			isa = PBXGroup;
 			children = (
 				E1D9ABC9247549EB0063875B /* Study-1-CardGame */,
 				E1D9ABC8247549EB0063875B /* Products */,
+				B7BD89FBD2C6FB66C0BC5786 /* Pods */,
+				9EBA977E9E03FF3E330E572D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,6 +85,8 @@
 				E1D9ABCA247549EB0063875B /* AppDelegate.swift */,
 				E1D9ABCE247549EB0063875B /* ViewController.swift */,
 				E136928C247A66BE00BBABA0 /* CardButton.swift */,
+				E136928E247A8F9000BBABA0 /* Game.swift */,
+				E1369290247A8FF500BBABA0 /* Card.swift */,
 				E1D9ABD3247549EC0063875B /* Assets.xcassets */,
 				E1D9ABD5247549EC0063875B /* LaunchScreen.storyboard */,
 				E1D9ABD8247549EC0063875B /* Info.plist */,
@@ -71,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1D9ABDB247549EC0063875B /* Build configuration list for PBXNativeTarget "Study-1-CardGame" */;
 			buildPhases = (
+				5CD06218BEE11D1031A97BC7 /* [CP] Check Pods Manifest.lock */,
 				E1D9ABC3247549EB0063875B /* Sources */,
 				E1D9ABC4247549EB0063875B /* Frameworks */,
 				E1D9ABC5247549EB0063875B /* Resources */,
+				2BF5270940ABE2BD6B4846E6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +161,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2BF5270940ABE2BD6B4846E6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Study-1-CardGame/Pods-Study-1-CardGame-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Study-1-CardGame/Pods-Study-1-CardGame-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Study-1-CardGame/Pods-Study-1-CardGame-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5CD06218BEE11D1031A97BC7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Study-1-CardGame-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E1D9ABC3247549EB0063875B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -136,7 +210,9 @@
 			files = (
 				E1D9ABCF247549EB0063875B /* ViewController.swift in Sources */,
 				E136928D247A66BE00BBABA0 /* CardButton.swift in Sources */,
+				E1369291247A8FF500BBABA0 /* Card.swift in Sources */,
 				E1D9ABCB247549EB0063875B /* AppDelegate.swift in Sources */,
+				E136928F247A8F9000BBABA0 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +346,7 @@
 		};
 		E1D9ABDC247549EC0063875B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A88BC475428F2EE43F83D38F /* Pods-Study-1-CardGame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +364,7 @@
 		};
 		E1D9ABDD247549EC0063875B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C3D0FD90C2EEA6AAA930B1B /* Pods-Study-1-CardGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
