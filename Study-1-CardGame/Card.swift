@@ -8,12 +8,14 @@
 
 import Foundation
 
-class Card {
+struct Card {
     var isFaceUp: Bool = false
     var isMatched: Bool = false
     var identifier: Int
+    var emoji: String
     
-    init(identifier: Int) {
+    init(identifier: Int, emoji: String) {
         self.identifier = identifier
+        self.emoji = emoji
     }
 }

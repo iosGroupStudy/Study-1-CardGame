@@ -37,5 +37,23 @@ class CardButton: UIButton {
         return CGSize(width: 90, height: 130)
     }
     
+    func setCard(isMatched: Bool, isFaceUp: Bool, emoji: String) {
+        if isFaceUp {
+            isUserInteractionEnabled = true
+            setTitle(emoji, for: .normal)
+            backgroundColor = .white
+        } else {
+            if isMatched {
+                // hidden 일떄 stack
+                isUserInteractionEnabled = false
+                backgroundColor = .black
+                setTitle("", for: .normal)
+            } else {
+                isUserInteractionEnabled = true
+                setTitle("", for: .normal)
+                backgroundColor = .systemPink
+            }
+        }
+    }
 }
 

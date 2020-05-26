@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     
     let titlelabel = UILabel()
     
+    let resetButton = UIButton()
+    
     var flipCount: Int = 0 {
         didSet {
             flipCountLabel.text = "Flip 횟수:  \(flipCount)"
@@ -21,7 +23,6 @@ class ViewController: UIViewController {
     
     var cardButtons: [CardButton] = []
     
-    let emojis = ["🐡", "🦈", "🐡", "🦈", "🐳", "🐳","🐸", "🐸","🦊","🦊", "🐼", "🐼"].shuffled()
     
     // 라벨이란. 단순한 텍스트를 나타낸다
     let flipCountLabel = UILabel()
@@ -38,7 +39,17 @@ class ViewController: UIViewController {
         view.addSubview(titlelabel)
         titlelabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(30)
+            make.top.equalToSuperview().inset(50)
+        }
+        
+        resetButton.setTitle("리셋", for: .normal)
+        resetButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        resetButton.setTitleColor(.orange, for: .normal)
+        resetButton.addTarget(self, action: #selector(self.reset), for: .touchUpInside)
+        view.addSubview(resetButton)
+        resetButton.snp.makeConstraints { make in
+            make.centerY.equalTo(titlelabel)
+            make.trailing.equalToSuperview().inset(30)
         }
         
         let verticalStackView = UIStackView()
@@ -54,7 +65,6 @@ class ViewController: UIViewController {
         view.addSubview(verticalStackView)
         
         for _ in 1...3 {
-
             let stackView = UIStackView()
             verticalStackView.addArrangedSubview(stackView)
             stackView.axis = .horizontal
@@ -76,7 +86,7 @@ class ViewController: UIViewController {
         view.addSubview(flipCountLabel)
         flipCountLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(verticalStackView.snp.bottom).offset(30)
+            make.bottom.equalToSuperview().inset(200)
         }
         flipCountLabel.text = "\(flipCount)"
         flipCountLabel.textColor = .orange
@@ -84,18 +94,20 @@ class ViewController: UIViewController {
     }
     
     @objc func flipCard(sender: UIButton) {
-        print("######", cardButtons.firstIndex(of: sender as! CardButton))
-        if let index = cardButtons.firstIndex(of: sender as! CardButton) {
-            game.chooseCard(at: index)
-//                cardButtons[index].setTitle("", for: .normal)
-//                cardButtons[index].backgroundColor = .systemPink
-//            } else {
-//                cardButtons[index].setTitle(emojis[index], for: .normal)
-//                cardButtons[index].backgroundColor = .white
-//            }
-        }
-        
         flipCount += 1
+        guard let index = cardButtons.firstIndex(of: sender as! CardButton) else {
+            return
+        }
+        game.setCard(at: index).enumerated().forEach { (index, card) in
+            cardButtons[index].setCard(isMatched: card.isMatched, isFaceUp: card.isFaceUp, emoji: card.emoji)
+        }
+    }
+     
+    @objc func reset() {
+        flipCount = 0
+        Game(numberOfPairs: 6).cards.enumerated().forEach { (index, card) in
+            cardButtons[index].setCard(isMatched: card.isMatched, isFaceUp: card.isFaceUp, emoji: card.emoji)
+        }
     }
 }
 
